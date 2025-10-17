@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const SchoolSystem = {
   danhSach: [],
   soLuongHocSinh: 0,
@@ -23,12 +22,10 @@ const SchoolSystem = {
       return maHs;
     }
   },
-  timHocSinh(maHS) {
-    const hocSinh = this.danhSach.find((found) => found.maHS === maHS);
-    return hocSinh || null;
-  },
-=======
-const schoolSystem = {
+timHocSinh(maHS) {
+  const hocSinh = this.danhSach.find((found) => found.maHS === maHS);
+  return hocSinh || null;
+},
   danhSach: [],
   soLuongHocSinh: 0,
   khoiTao(data = []) {
@@ -62,26 +59,20 @@ const schoolSystem = {
   timHocSinh(maHS) {
     return this.danhSach.find((hs) => hs.maHS === maHS) || null;
   },
-
->>>>>>> 00f76a114e11e9adb2c998eaec98984ecd30f3b8
   capNhatThongTin(maHS, duLieuMoi) {
     const index = this.danhSach.findIndex((hs) => hs.maHS === maHS);
     if (index === -1) return false;
     const { maHS: _, ...duLieuCapNhat } = duLieuMoi;
     const duLieuTam = { ...this.danhSach[index], ...duLieuCapNhat };
     if (!this._kiemTraHopLe(duLieuTam)) return false;
-<<<<<<< HEAD
     this.danhSach[index] = duLieuTam;
     return true;
   },
 xoaHocSinh(maHS) {
-=======
-
     this.danhSach[index] = duLieuTam;
     return true;
   },
   xoaHocSinh(maHS) {
->>>>>>> 00f76a114e11e9adb2c998eaec98984ecd30f3b8
     const index = this.danhSach.findIndex((hs) => hs.maHS === maHS);
     if (index === -1) return false;
     this.danhSach.splice(index, 1);
@@ -89,7 +80,6 @@ xoaHocSinh(maHS) {
     return true;
   },
   layDanhSachTheoLop(tenLop) {
-<<<<<<< HEAD
     const danhSachLop = this.danhSach.filter(
       (hocSinh) => hocSinh.lopHoc === tenLop
     );
@@ -102,7 +92,6 @@ xoaHocSinh(maHS) {
     }
   },
  thongKeHocLuc() {
-=======
     return this.danhSach.filter((hs) => hs.lopHoc === tenLop);
   },
   timTheoTen(ten) {
@@ -111,7 +100,6 @@ xoaHocSinh(maHS) {
     );
   },
   thongKeHocLuc() {
->>>>>>> 00f76a114e11e9adb2c998eaec98984ecd30f3b8
     const thongKe = {
       "Xuất Sắc": 0,
       Giỏi: 0,
@@ -119,10 +107,6 @@ xoaHocSinh(maHS) {
       "Trung Bình": 0,
       Kém: 0,
     };
-<<<<<<< HEAD
-=======
-
->>>>>>> 00f76a114e11e9adb2c998eaec98984ecd30f3b8
     this.danhSach.forEach((hs) => {
       const dtb = hs.diemTB;
       if (dtb >= 9.0) thongKe["Xuất Sắc"]++;
@@ -131,16 +115,12 @@ xoaHocSinh(maHS) {
       else if (dtb >= 5.0) thongKe["Trung Bình"]++;
       else thongKe["Kém"]++;
     });
-<<<<<<< HEAD
-    return thongKe;
+        return thongKe;
   },
 sapXepTheoDiem(kieuSapXep = "tang") {
-=======
-
     return thongKe;
   },
   sapXepTheoDiem(kieuSapXep = "tang") {
->>>>>>> 00f76a114e11e9adb2c998eaec98984ecd30f3b8
     const danhSachCopy = [...this.danhSach];
     return danhSachCopy.sort((a, b) =>
       kieuSapXep === "tang" ? a.diemTB - b.diemTB : b.diemTB - a.diemTB
@@ -149,8 +129,5 @@ sapXepTheoDiem(kieuSapXep = "tang") {
   xuatDanhSach() {
     return [...this.danhSach];
   },
-<<<<<<< HEAD
 };
-=======
-};
->>>>>>> 00f76a114e11e9adb2c998eaec98984ecd30f3b8
+

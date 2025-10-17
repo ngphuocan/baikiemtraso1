@@ -4,7 +4,7 @@ const schoolSystem = {
   khoiTao(data = []) {
     this.danhSach = [...data];
     this.soLuongHocSinh = data.length;
-  },
+},
   _taoMaHocSinh() {
     const nam = new Date().getFullYear();
     const stt = String(this.soLuongHocSinh + 1).padStart(3, "0");
